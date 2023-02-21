@@ -1,0 +1,42 @@
+.localizacion{
+    max-width: 100%;
+    height: 70rem;
+    margin:0 auto;    
+    max-width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+
+    .localizacion h3{  
+        position:absolute;
+        top:25%;
+        left: 72%;
+        margin:5rem 0 2rem 0;
+        font-size: 2.5rem;
+        color: rgb(198, 169, 41);
+        text-transform: uppercase;
+     
+     }
+     .localizacion-info{  
+         width: 30%;  
+         border: 0.1rem solid black;  
+         text-align: left; 
+         font-family:'Comfortaa';
+         color:black;
+         font-size: 1.6rem; 
+         display: inline-block;
+         position: relative;
+         padding: 1.5rem;
+     }
+} 
+
+
+.contacto{
+    padding: 1rem;
+}
+.localizacion-info i{
+    font-size: 2rem;
+    color:black;
+    padding-right: 0.8rem;
+}

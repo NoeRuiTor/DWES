@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+
+html{
+    font-size: 10px;
+}
+
+body{
+    font-family:'Comfortaa', cursive;    
+    font-weight: 600;
+    font-size: 1.6em;   
+    color: black;
+    text-align: center;
+ 	background-color: white;    
+}
+
+.site{
+    max-width: 120rem;
+    margin: 0 auto;      
+    font-family:'Comfortaa', cursive;
+    padding-top: 15rem;
+}
+
+

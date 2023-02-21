@@ -1,0 +1,1010 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600&family=Poppins:wght@700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+
+html{
+    font-size: 10px;
+}
+
+body{
+    max-width: 140rem;
+    font-family:'Comfortaa', cursive;    
+    font-weight: 600;
+    font-size: 1.6em;   
+    color: black;
+    text-align: center;
+ 	background-color: white;    
+    margin: 0 auto;
+}
+
+.site{
+    width: 100%;
+    min-width: 100%;
+    margin: 0 auto;      
+    font-family:'Comfortaa', cursive;
+    padding-top: 12rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+header{
+    width: 100%; /* hacemos que la cabecera ocupe el ancho completo de la página */
+	left: 0; /* Posicionamos la cabecera al lado izquierdo */
+	top: 0; /* Posicionamos la cabecera pegada arriba */
+	position: fixed; /* Hacemos que la cabecera tenga una posició*/
+    z-index: 1;
+    box-shadow: 0.3em 0.3em 1em rgba(0,0,0,0.3);
+}
+main{
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto; 
+    
+}
+
+.navegador{
+    background-color: white;    
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    align-items: center;     
+    max-width: 100%; 
+    height: 15rem;    
+}
+
+.logo{
+    grid-column: 2/3;
+}
+
+.menu{    
+    grid-column: 4/9;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+}
+
+.menu .menu__opcion{
+    list-style: none;
+}
+
+.menu .menu__opcion a{
+    text-decoration: none;
+    font-weight: 600;
+    color: black;
+    padding-top: 2rem;
+    
+}
+
+
+.menu .menu__opcion a:hover{
+    text-decoration: none;
+    color:#2E86C1;
+    border-top: 1px solid black;
+}
+
+/*----OPCION MENU ACTIVA----*/
+
+.menu .menu__opcion .active{
+    text-decoration: none;
+    color:#2E86C1;
+    border-top: 1px solid black;
+}
+
+.navegador .navegador__iconos{
+    grid-column: 9/12;
+    display: flex;
+    justify-content: space-between;  
+    align-self:center;
+
+}
+
+.navegador__iconos a{
+    text-decoration: none;
+    color:#2E86C1;    
+}
+
+#unidades{
+   color:#2E86C1;
+}
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .search-container form {
+    display: flex;
+  }
+  
+  .search-container input[type="text"] {
+    width: 60%;
+    padding: 1.2rem;
+    border: 1px solid #ccc;
+    border-radius: 0.4rem;
+    font-size: 1.6rem;
+    margin-right: 1rem;
+  }
+  
+  .search-container button[type="submit"] {
+    width: 20%;
+    padding: 1.2rem;
+    background-color:#2E86C1;
+    color: white;
+    border: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    font-size: 1.6rem;
+  }
+  
+  .search-container button[type="submit"]:hover {
+    background-color: #7FB3D5;
+  }
+  
+
+#submenu-li {
+    position: relative;
+  }
+  
+  #submenu-li:hover .submenu {
+    display: block;
+    opacity: 1;
+  }
+  
+  .submenu {       
+    margin: 0;
+    padding: 1em 0;
+    width: 200%;
+    position: absolute;
+    left: -30%;
+    top: 100%;
+    opacity: 0;
+    display: none;
+    background: white;
+    text-align: center;
+  }
+  
+  .submenu li {
+    list-style: none;
+    padding: 1.2em 0;
+  }
+
+/*---------------HOME---------*/
+  
+  .banner1{
+    box-shadow:0px 0px 30px 2px rgb(150,150,150); 
+    height: 60rem; 
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: repeat(8,1fr);    
+    background-blend-mode: saturation;
+    background-repeat: no-repeat;
+    background-size: cover;
+        
+    max-width: 100%;    
+
+  }
+
+.home .banner1-home{
+    background-image:  url(../imgs/background-banner1.jpg);
+    background-position: center center;
+}
+.banner1>.banner1__background {
+    grid-column: 1/7;
+    grid-row: 1/12;
+    background-color: #3f5b6d6f;
+          
+}
+
+ .background__text-box{
+    margin: 5rem 2rem 0 5rem;     
+    height: 60%;       
+    display: flex;
+    flex-wrap: wrap;    
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+
+}
+
+.background__text-box h1{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 4rem;
+    letter-spacing: 1rem;
+    color: white;
+    padding-top: 1rem;
+    text-transform: uppercase;
+}
+
+.background__text-box h1 span{
+    color: rgb(198, 169, 41); 
+    font-weight: 900;
+}
+
+.background__text-box p{
+    color: white;
+    font-size: 2rem;
+    font-weight:lighter;
+    padding-top: 1rem;
+    
+}
+.info{
+    height: 50rem;
+    text-align: center;
+    margin:3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between ;
+    
+}
+
+.info__heading{
+    font-size: 2.5rem;
+    width: 80%;
+    padding: 2rem;
+}
+.info__heading h2{    
+    font-family: 'Poppins', sans-serif;
+    color:#2E86C1;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8rem;
+}
+
+
+.info__iconos{   
+    display: flex;    
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;  
+    text-align: center; 
+    max-width: 90%;  
+    margin-left: 5rem; 
+}
+.iconos{
+   margin: 0 2rem;
+}
+.iconos img{
+    width: 6rem;
+    height: 6rem;
+}
+
+.iconos p{
+    font-size: 1.6em;
+    padding: 5rem 3rem;    
+}
+
+.banner2{
+    height: 50rem; 
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: repeat(8,1fr);
+    background-image: url(../imgs/background-banner2.jpg);    
+    background-repeat: no-repeat;
+    background-size: cover;        
+    max-width: 100%; 
+    
+}
+.banner2 .banner2__background{
+    grid-column: 6/13;
+    grid-row: 1/9 ;
+    background-color: #3f5b6d6e;          
+}
+.banner2 .banner2__background .background__text-box{   
+    padding-right: 5rem;
+    height: 70%;       
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+   
+
+}
+
+
+/*------------------FOOTER--------------*/
+
+footer{ 
+    margin:0 auto;   
+    height: 30rem;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: repeat(4, 1fr);
+    font-family:'Poppins', sans-serif;  
+    width: 100%;
+    max-width: 100%;
+    background-color: white;
+    box-shadow: 0.3em 0.3em 1em rgba(0,0,0,0.3); 
+    margin-top: 1rem;    
+}
+
+.logo-footer{
+    grid-row: 1/3; 
+    grid-column: 2/3;  
+    
+}
+.main-footer{
+    grid-row: 1/3;
+    grid-column: 3/12;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    align-items:flex-start;
+    padding:5rem 2rem;  
+}
+.footer-footer{
+    grid-row:4/4;
+    grid-column: 1/12;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.main-footer li{
+    list-style: none;
+    font-size: 0.8em;    
+}
+footer a{
+    text-decoration: none;
+    color: black;
+}
+footer h4{
+    font-weight: 1em;
+    font-weight: bold;
+    padding-bottom: 1rem;
+}
+
+
+/*---------CONTACTO--------*/
+
+.localizacion{
+    max-width: 100%;
+    height: 70rem;
+    margin:0 auto;    
+    max-width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+} 
+
+.localizacion h3{  
+   position:absolute;
+   top:25%;
+   left: 72%;
+   margin:5rem 0 2rem 0;
+   font-size: 2.5rem;
+   color: rgb(198, 169, 41);
+   text-transform: uppercase;
+
+}
+.localizacion-info{  
+    width: 30%;  
+    border: 0.1rem solid black;  
+    text-align: left; 
+    font-family:'Comfortaa';
+    color:black;
+    font-size: 1.6rem; 
+    display: inline-block;
+    position: relative;
+    padding: 1.5rem;
+}
+.contacto{
+    padding: 1rem;
+}
+.localizacion-info i{
+    font-size: 2rem;
+    color:black;
+    padding-right: 0.8rem;
+}
+
+/*-----------TIENDA-------------------*/
+
+
+
+
+.content{
+    display: flex;
+    width: 100%;
+    max-width: 100%; 
+    margin: 0 auto;   
+    padding: 1rem 0;
+     
+}
+.aside{
+    width: 15%;
+    max-width: 15%;    
+    min-width:max-content;
+    padding: 5rem 2rem;
+    background-color: white;
+    box-shadow:0px 0px 15px 2px rgb(150,150,150);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ 
+}
+
+.aside h3{
+    width: 100%;
+    max-width: 100%;
+    font-size: 2rem;
+    color:rgb(198, 169, 41);
+    border-bottom: 1px solid black;
+    text-transform: uppercase;
+    padding: 2rem;
+
+}
+
+.aside ul{
+    width: 100%;
+    max-width: 100%;
+}
+.aside ul li{   
+    list-style: none;
+    padding:2rem 0;
+}
+.aside ul li a{
+    color:black;
+    text-decoration: none;
+    padding-bottom: 2rem;
+}
+.aside ul li a:hover{    
+    text-decoration: none;
+    color:#2E86C1;
+    border-bottom: 1px solid black;
+}
+.aside ul li .active{
+    color:#2E86C1;
+}
+.banner-info{
+    width: 100%;
+    min-width: 100%;
+}
+#tienda{
+    max-width: 70%;
+    width: 70%;
+    min-width: 70%; 
+}
+.catalogo{
+    max-width: 100%;
+    width: 100%;
+    min-width: 100%;
+    padding: 5rem 2rem;
+    background-color: white;    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;  
+    position: relative;
+      
+}
+.catalogo .articulo{
+    max-width: 26rem;
+    min-width:26rem ;
+    height: 40rem;    
+    margin:2rem;    
+    display: flex;    
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-between;
+    padding: 2rem;
+    box-shadow:0px 0px 15px 2px rgb(150,150,150);
+    text-align: center; 
+    font-family:'Poppins', sans-serif;
+    flex-basis: auto;      
+}
+.articulo img{
+    width: 20rem;
+    height: 20rem;
+    display: block;
+}
+.articulo h3 {
+    font-size: 1.8rem;    
+}
+.articulo p{
+    font-size: 1rem;    
+}
+.articulo .precio{
+    font-family: 'Comfortaa', cursive;
+    font-weight: 600;
+}
+.articulo .fa-shopping-cart{
+    color:black;
+    font-size:1.8rem ;
+}
+
+.catalogo .filtro{
+  position:absolute;
+  top:0;
+  left: 60%;
+}
+.aside__right{
+    width: 90%;
+    max-width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.aside__right form{
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction:column;
+    align-items: center;     
+    font-size: 1.6rem; 
+    gap:1rem;   
+    margin-top: 2rem;  
+}
+.aside__right form a{
+    
+    text-decoration: none;
+    color:black;
+}
+.aside__right form input{
+    padding:1rem;
+}
+/*------carrito-aside-------*/
+.aside-carrito {
+    width: 100%;
+    max-width: 100%;
+}
+.aside-carrito h3{
+   padding: 2rem 0;
+}
+.aside-carrito .carrito-tabla{  
+    font-size: 1rem;
+    margin: 0 auto;     
+}
+.carrito .carrito-tabla form{
+    margin:0 auto;
+}
+.carrito .carrito-tabla th{
+    border-bottom: 0.1rem black solid;
+}
+.aside-carrito .carrito-tabla .total-carrito{
+    text-align: right;
+}
+.carrito .btns{
+   width: 100%;
+   display: flex; 
+   justify-content: center;
+   align-items:center;
+}
+.carrito .btn-carrito{    
+   
+    font-family: 'Comfortaa', cursive;
+    font-size: 1rem;
+    background-color:#2E86C1;
+    color: white;    
+    border-radius: 0.4rem;
+    cursor: pointer;
+    border:#7FB3D5 0.1rem solid;
+    padding:0.2rem;
+    
+}
+
+
+/*-----------FORMULARIO REGISTRO ---------*/
+
+.formularios__section{
+    width: 100%;    
+    padding: 2rem;
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.468), rgba(0, 0, 0, 0.567)), url(../imgs/background-iniciaSesion.jpg);    
+    background-repeat: no-repeat;
+    background-size: cover;  
+    
+}
+
+.formulario-alta{
+    width: 60%;
+    display: flex;
+    flex-direction: column;     
+    padding:2rem; 
+    margin:0 auto; 
+    border: 0.1rem solid white;
+    background-color: white;
+    
+}
+
+.formulario-alta h2{
+    padding: 3rem 0;
+    text-align: left;
+    
+}
+.formulario-alta div{
+    display: flex;
+    width: 100%;
+    padding:1rem;
+}
+.formulario-alta input{
+    width: 100%;
+    border: none;
+    border-bottom: 0.1rem solid gray;
+    padding: 0.5rem;
+    font-size: 1.6rem;
+}
+.formulario-alta >.btns{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.formulario-alta >.btns .btn{
+    width: 20%;
+    
+}
+
+
+/*-----------------FORMULARIO LOGIN-------------------*/
+.formularioLogin,.formularioAlta{
+ 
+    display: flex;
+    align-items: center;
+    justify-content: center;     
+    background-image:  linear-gradient(rgba(0, 0, 0, 0.468), rgba(0, 0, 0, 0.567)), url(../imgs/background-iniciaSesion.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;        
+    width: 100%;
+    
+    
+    
+}
+.formularioLogin .contenedor
+  {
+    width: 50%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
+    align-items: center;      
+    padding:2rem; 
+    margin:2rem 0; 
+    border: 0.1rem solid black;
+    background-color: white;
+    box-shadow:0px 0px 30px 2px rgb(150,150,150);   
+    
+  }
+
+ .contenedor h2{
+    padding: 3rem 0;
+ }
+ 
+ .formularioUser.input{
+    width: 60%;
+    margin:1rem;
+    padding: 1rem;
+}
+.formularioUser .formulariolog__tabla .cajas 
+{
+    margin:2rem 0;
+    padding: 1.6rem;
+} 
+.cambia{
+    text-align: center; 
+    margin-top: 5rem; 
+}
+.cambia a
+{
+    font-size:2rem;
+    color:rgb(198, 169, 41);
+    text-decoration: none;
+}
+
+/*------------------------BOTONES FORMULARIOS----------------------------*/
+ .btn{
+    
+    padding:1rem;
+    font-family: 'Comfortaa', cursive;
+    font-size: 1.6rem;
+    background-color:#2E86C1;
+    color: white;    
+    border-radius: 0.4rem;
+    cursor: pointer;
+    border:#7FB3D5 0.1rem solid;
+    margin:0 auto;   
+    
+   
+}
+.btn:hover{
+    background-color: #7FB3D5;
+}
+
+
+.btns{
+    width: 70%;   
+    margin:1rem 0;
+    padding: 1rem 0;
+    display: flex;
+    justify-content:space-between;        
+}
+
+/*-----------------MENSAJES ERROR -------------------*/
+
+#error
+{   
+    font-weight: bold; 
+    color: red;
+}
+#mensaje
+{
+    font-weight: bold;
+     color: red;
+}
+
+
+
+/*-------------MENU PRINCIPAL USUARIOS-------------------*/
+.panelUsu{    
+    width: 100%;
+    height: auto;  
+    margin:0 auto;
+    padding:2rem;
+    background-color: white;
+    box-shadow:0px 0px 30px 2px rgb(150,150,150);
+    line-height: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:flex-start;
+}
+.panelUsu__heading h1{
+    margin-top: 5rem;
+    font-size: 4rem;
+    color:black;
+}
+.panelUsu__heading p{
+    font-size: 2.5rem;
+}
+.panelUsu__content{
+    width: 80%;
+    padding:5rem;
+    
+}
+.panelUsu__content ul{
+    width: 100%;
+}
+.panelUsu__content ul li{   
+    list-style: none;
+    padding:1rem;
+    background-color: #7FB3D5;
+    border:#7FB3D5 0.1rem solid;
+    margin:2rem;
+    border-radius: 2rem;;
+}
+.panelUsu__content ul li a{
+    color:black;
+    text-decoration: none;
+    padding:2rem;
+}
+.panelUsu__content ul li a:hover{    
+    text-decoration: none;
+    color:white;
+    
+}
+.logout a{
+    text-decoration: none;
+    color:rgb(198, 169, 41);
+    font-size: 2.5rem;
+    
+}
+
+.panelUsu .edit{
+    width: 2rem;
+    
+}
+
+.panelUsu .normal{
+    width: 100%;
+    border: 0.1rem solid black;
+    border-collapse: collapse;
+    font-family:'Poppins', sans-serif;
+}
+.normal  th, .normal  td{
+    border: 0.1rem solid black;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    height: 2rem;
+
+}
+.normal  th{
+    background-color:#2E86C1;
+    font-size: 1.6rem;
+    color:white;
+
+}
+.normal td .foto{
+    width: 5rem;
+    height: 5rem;
+}
+/*---------------Buscador Cabecera-----------*/
+
+.catalogo .noExiste{
+    font-size: 2.5rem;
+    color:black;
+
+}
+
+/*-------------Formulario Pedido------------*/
+.panelPedido{    
+    width: 100%;
+    min-height: 100%;
+    margin:0 auto;
+    padding:2rem;
+    background-color: white;
+    box-shadow:0px 0px 30px 2px rgb(150,150,150);
+    line-height: 4rem;
+    
+}
+.panelPedido__heading h1{
+    
+    font-size: 4rem;
+    color:black;
+}
+.panelPedido__heading p{
+    font-size: 2.5rem;
+}
+.formPedido{
+    display: flex;   
+    align-items:flex-start;
+    justify-content:center; 
+   
+}
+.resumenPed{
+    width: 30%;
+    margin:2rem 0; 
+    background-color: white;
+
+}
+
+
+.panelPedido .normal{
+    width: 100%;
+    border: 0.1rem solid black;
+    border-collapse: collapse;
+    font-family:'Poppins', sans-serif;
+}
+.normal  th, .normal  td{
+    border: 0.1rem solid black;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    height: 2rem;
+
+}
+.normal  th{
+    background-color:#2E86C1;
+    font-size: 1.6rem;
+    color:white;
+
+}
+.resumenPed .normal .total-carrito{
+    text-align:right;
+    font-size: 1.2rem;
+}
+.metodo-pago{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin:2rem 0;
+    background-color: white;
+
+}
+.metodo-pago .paypal,.visa{
+    width: 4rem;
+   
+}
+.metodo-pago .bizum{
+    width: 5rem;
+}
+
+.datos-envio{
+    width: 30%;    
+    background-color: white;
+    margin:2rem 0;       
+    
+}
+
+.datos-envio div{   
+    width: 80% ; 
+    display:flex;
+}
+.datos-envio input{
+    width: 100%;
+    border: none;
+    border-bottom: 0.1rem solid gray;
+    padding: 0.5rem;
+    font-size: 1.6rem;
+}
+.legal{
+  display: flex;
+  font-size: 1.2rem;
+ 
+}
+.privacidad{
+    
+    font-size: 1rem; 
+    height: 2rem;
+    width: 100%;
+    line-height: 2rem;
+    margin: 1.5rem 0;
+}
+.privacidad input{
+    width: 2rem;
+}
+.btns-pedido{
+    margin:0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/*----------PAGINA SERVICIOS---------*/
+.banner1-servicios{
+    width: 100%;
+    background-image:  url(../imgs/slider.jpg);
+    background-position: center top;
+}
+.banner1 >.banner1__background {
+    grid-column: 1/7;
+    grid-row: 1/12;
+    background-color: #2d31346f;
+          
+}
+
+.servicios{
+    width: 100%;
+    max-width: 100%; 
+    margin: 0 auto;   
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  
+    background-color: white;
+    box-shadow:0px 0px 15px 2px rgb(150,150,150);
+    
+
+}
+.servicios .top, .servicios .bottom{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   border-top: dotted #2E86C1;
+
+}
+
+article{
+  width: 50%;
+  padding: 2rem; 
+  
+}
+
+article h3{
+    margin:2rem 0;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1rem;
+    color: rgb(198, 169, 41); 
+   
+}
+
+article p{
+  line-height: 2rem; 
+ 
+}
+
+/*----------LEGAL--------*/
+.legal-heading{
+    margin-top:12rem;
+}
+.content .legal-info{
+    text-align:justify;
+    margin: 5rem;
+}
