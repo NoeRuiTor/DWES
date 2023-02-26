@@ -1,8 +1,20 @@
 <?php
+session_start();
+//print_r($_SESSION);
+
 
 include("../funciones.php");
 
-
+if(isset ($_REQUEST['btnVolver'])){
+    
+    header("Location:../index.php");
+   
+}
+if(isset($_SESSION['rol'])  ){
+    if($_SESSION['rol'] != 'administrador'){
+        header("location:../menuPrincipal.php");
+    }
+}
 
 $existenDatos=false;
 $correctoDni=false;
@@ -99,7 +111,7 @@ if(isset ($_REQUEST['enviar'])){
 
 
 //Si existen los datos y son correcto insertarlos en la base de datos    
-    if ($existeDni && $existeUsuario && $correctoDni && $existeRol && $repeUser==false && $existenDatos && $estadoCorrecto){       
+    if ($existeDni==true && $existeUsuario==true && $correctoDni==true && $existeRol==true && $existePassword==true && $repeUser==false && $existenDatos==true && $estadoCorrecto==true){       
         
     // Con esta sentencia SQL insertaremos los datos en la base de datos
     $sentencia = $con->prepare("INSERT INTO usuarios (dni,nombre,apellidos,direccion,localidad,provincia,telefono,email,password,rol,estado)
@@ -116,7 +128,7 @@ if(isset ($_REQUEST['enviar'])){
         else{
             $error = "Error al intentar insertar los datos";
             if(isset($_SESSION['rol'])){
-                header("location:../menuPrincipal?error=$error");
+                header("location:../menuPrincipal.php?error=$error");
             }else{
              header("Location:../iniciaSesion.php?error=$error");
             }
@@ -128,15 +140,14 @@ if(isset ($_REQUEST['enviar'])){
 
 }
 else {
-    header("location:../usuarioNuevo.php?dni=$dni&email=$email&nombre=$nombre&apellidos=$apellidos&direccion=$direccion&localidad=$localidad&provincia=$provincia&telefono=$telefono&rol=$rol&estado=$estado&existeUsuario=$existeUsuario&existenDatos=$existenDatos&repeUser=$repeUser&existeRol=$existeRol&existeDni=$existeDni&correctoDni=$correctoDni&estadoCorrecto=$estadoCorrecto");      
-           
-    }
+    if(isset($_SESSION['rol'])){
+        header("location:../AltaClientes_porAdmin.php?dni=$dni&email=$email&nombre=$nombre&apellidos=$apellidos&direccion=$direccion&localidad=$localidad&provincia=$provincia&telefono=$telefono&rol=$rol&estado=$estado&existeUsuario=$existeUsuario&existenDatos=$existenDatos&repeUser=$repeUser&existeRol=$existeRol&existeDni=$existeDni&correctoDni=$correctoDni&estadoCorrecto=$estadoCorrecto&existePassword=$existePassword");   
+    }else{
+    header("location:../usuarioNuevo.php?dni=$dni&email=$email&nombre=$nombre&apellidos=$apellidos&direccion=$direccion&localidad=$localidad&provincia=$provincia&telefono=$telefono&rol=$rol&estado=$estado&existeUsuario=$existeUsuario&existenDatos=$existenDatos&repeUser=$repeUser&existeRol=$existeRol&existeDni=$existeDni&correctoDni=$correctoDni&estadoCorrecto=$estadoCorrecto&existePassword=$existePassword");      
+    }      
+   }
 }
 }
-if(isset ($_REQUEST['btnVolver'])){
-    
-     header("Location:../index.php");
-    
-}
+
 }
 ?>

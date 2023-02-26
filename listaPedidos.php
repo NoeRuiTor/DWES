@@ -75,7 +75,7 @@
               }elseif(isset($_REQUEST['ordenaDescen'])){
                 $sql = "SELECT * FROM pedido ORDER BY fecha DESC";
               }else{
-                $sql = "SELECT * FROM pedido";
+                $sql = "SELECT * FROM pedido WHERE estado != 'anulado'";
               }
               $sentencia = $con->prepare($sql);
               $sentencia -> execute();
@@ -123,7 +123,7 @@
                 
                 $id = $_SESSION['id'];
                   
-                    $sql = "SELECT * FROM pedido WHERE id_usuario = ? ";
+                    $sql = "SELECT * FROM pedido WHERE id_usuario = ? and estado != 'anulado' ";
                   
                   $sentencia = $con->prepare($sql);
                   $sentencia -> execute([$id]);

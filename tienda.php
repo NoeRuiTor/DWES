@@ -260,12 +260,13 @@ if(isset($_REQUEST['id_categoria'])){
                 echo "<div class='paginas'>";
                     if ($total_paginas > 1){
                        for ($i=1;$i<=$total_paginas;$i++){
+                        $idcat=$id_categoria;
                           if ($pagina == $i){
                           //si muestro el índice de la página actual, no coloco enlace
                           echo $pagina . " ";
                           }else{
                             //si el índice no corresponde con la página mostrada actualmente, coloco el enlace para ir a esa página
-                            echo "<a href='tienda.php?pagina=". $i ."'>" . $i . "</a> ";
+                            echo "<a href='tienda.php?id_categoria=".$idcat."&pagina=". $i ."'>" . $i . "</a> ";
                           }
                        }
                       }
@@ -297,7 +298,7 @@ if(isset($_REQUEST['id_categoria'])){
                           <label for="usuario">Usuario</label>
                           <input type="email" name="email" placeholder="correo@example.com">
                           <label for="contraseña">Contraseña</label>
-                          <input  type="password" name="password" placeholder="8 caracteres">
+                          <input  type="password" name="password" placeholder="8 caracteres" maxlength="8">
                           <input type="submit" class="btn" value="Enviar">                      
                           <a href="cambiaPassword.php">Olvidé mi contraseña</a>
                           <a href="usuarioNuevo.php">Registro</a>

@@ -45,12 +45,12 @@ if($_SESSION['rol']=='administrador'){
                 <input id="dni" type="text" size="15" maxlength="9" name="dni" pattern="[0-9]{8}[a-zA-Z]" disabled
                 value="<?php echo $usuario -> dni; ?> ">
                 <label for="nombre">Nombre:</label>
-                <input class="input" id="nombre" type="text" maxlength="20" name="nombre" pattern="[A-Za-zñáéíóú ]+" disabled
+                <input class="input" id="nombre" type="text" maxlength="20" name="nombre" pattern="[A-Za-zñáéíóú ]+" 
                 value="<?php echo $usuario -> nombre; ?>">
               </div>              
               <div>
                 <label for="apellidos">Apellidos:</label>
-                <input class="input" id="apellidos" type="text" maxlength="30" name="apellidos" pattern="[A-Za-zñáéíóú ]+" disabled 
+                <input class="input" id="apellidos" type="text" maxlength="30" name="apellidos" pattern="[A-Za-zñáéíóú ]+"  
                 value="<?php echo $usuario -> apellidos; ?>">
                 <label for="telefono">Teléfono:</label>
                 <input type="tel"  name="telefono" pattern="[0-9]{9}" 

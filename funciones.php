@@ -172,7 +172,18 @@ function muestraCarrito($con,$carrito) {
        
       <?php              
    
- 
+ function paginarLista($PAGS,$inicio,$con,$sql,$clase){
+               
+   $sentencia = $con->prepare($sql);
+   $sentencia -> execute();
+   $num_total_registros = $sentencia->rowCount();
+   $total_paginas = ceil($num_total_registros / $PAGS);
+   $sentencia = $con->prepare($sql."LIMIT ".$inicio."," .$PAGS."");
+   $sentencia -> execute();
+   $articulo = $sentencia->setFetchMode(PDO::FETCH_CLASS,$clase);
+   
+    return $articulo;
+ }
 
 }
 

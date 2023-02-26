@@ -25,7 +25,7 @@ include("cabecera.php");
               </tr>
               <tr> <td colspan="3">
                 <span>Contraseña:</span><br/>
-                <input class="cajas" type="password" name="password" placeholder="8 caracteres"> </td>
+                <input class="cajas" type="password" name="password" placeholder="8 caracteres" maxlength="8"> </td>
               </tr>
               <tr>
                 <td> <br/> <input type="submit" class="btn" value="Enviar"> </td>

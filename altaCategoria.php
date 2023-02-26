@@ -31,6 +31,10 @@ if($rol == 'administrador' || $rol == 'empleado' ){
       <form class="formulario-alta" method="post" action="productos/insertarCategoria.php" name="formNuevaCategoria">
             <h2>Alta de Categoria:</h2>
             <div>       
+              <label for="nombre">ID: </label>
+              <input id="nombre" type="number" min="1" maxlength="3" name="id"
+              value="<?php if(isset($_REQUEST['id'])) echo $_REQUEST['id']; ?>">    
+                  
               <label for="nombre">Nombre: </label>
               <input id="nombre" type="text" maxlength="40" size="40" name="nombre"
               value="<?php if(isset($_REQUEST['nombre'])) echo $_REQUEST['nombre']; ?>">

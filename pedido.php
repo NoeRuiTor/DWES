@@ -13,7 +13,9 @@
    if((!empty($_SESSION['productos']) && isset($_REQUEST['quitaProducto']))){
     unset($_SESSION['productos'][$_REQUEST['quitaProducto']]);
     
-  }
+   }
+ 
+
    if(!empty($_SESSION['productos'])){
       $carrito=$_SESSION['productos'];    
         
@@ -74,6 +76,7 @@
                       $cantidad=$_SESSION['productos'][$articulo->getId()];                      
                       $subtotal = $cantidad * $articulo->getPrecio();
                       $total += $subtotal;
+
                       echo "<tr>";
                       echo "<td><img src='" .$articulo->getImagen(). "' alt='".$articulo->getImagen()."'></td>";
                       echo "<td>".$articulo->getNombre()."</td>";

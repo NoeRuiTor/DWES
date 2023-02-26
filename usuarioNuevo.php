@@ -11,16 +11,21 @@
       
      
       include_once("cabecera.php");
+      ?>
+        <main class="formularios">
+        <section class="formularios__section"> 
+      <?php             
+
       if(isset($_SESSION["autentificado"]) && ($_SESSION["autentificado"] == "OK")){
         header('Location:menuPrincipal.php');
       }
 
       if(isset($_GET['existenDatos']) || isset($_GET['existeRol']) || isset($_GET['repeUser']) || isset($_GET['existeApellidos'])
-      || isset ($_GET['existeDni']) || isset ($_GET['correctoDni']) || isset ($_GET['existeUsuario'])){
+      || isset ($_GET['existeDni']) || isset ($_GET['correctoDni']) || isset ($_GET['existeUsuario']) || isset ($_GET['existePassword'])){
       
        
             
-              echo "<div class='errores'>";
+              echo "<div id='errores'>";
               if($_GET['existeUsuario']==false){
                 echo "<p>Error en el campo USUARIO. El email no tiene un formato correcto.</p>";        
               }
@@ -34,6 +39,10 @@
               if($_GET['repeUser']==true){
                 echo "<p>El correo introducido ya existe en la base de datos</p>";
               } 
+
+              if($_GET['existePassword'] == false){
+                 echo "<p>Introduzca una contraseña</p>";
+              }
               
               if($_GET['existeRol']==false){
                 echo "<p>Debe indicar el rol del usuario</p>";
@@ -43,9 +52,7 @@
       
     ?>
 
-     <main class="formularios">
-        <section class="formularios__section">              
-
+   
             <form class="formulario-alta" method="post" action="usuarios/insertar.php" name="formInsertar">
                     <h2>Nuevo usuario:</h2>                
                     <div>
@@ -83,7 +90,7 @@
                       pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,5}" 
                       value="<?php if(isset($_GET['email'])) echo $_GET['email']; ?>">
                       <label for="password">Contraseña:</label>
-                      <input id="clave" type="password" maxlength="60"  name="password" placeholder="8 caracteres">      
+                      <input id="clave" type="password" maxlength="8"  name="password" placeholder="8 caracteres">      
                     </div> 
                     <div>                                            
                       <input id="rol" type="hidden"  name="rol" value="usuario">         

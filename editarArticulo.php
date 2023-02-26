@@ -82,7 +82,7 @@ $id = $_REQUEST['id'];
             </div>
             <div>           
               <label for="imagen">Imagen(300kb max.):</label>
-              <input id="img" type="file" name="img" accept=".jpg, .jpeg, .png, .gif"/>                      
+              <input id="img" type="file" name="img" accept=".jpg, .jpeg, .png, .gif" value="<?php echo $articulo -> imagen; ?>"/>                      
             </div>
             <div><?php echo "<img src='{$articulo -> imagen}'>"; ?></div>
             <div class="btns">

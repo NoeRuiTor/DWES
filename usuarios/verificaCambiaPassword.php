@@ -1,11 +1,17 @@
 
 <?php
+ if(isset ($_REQUEST['btnCancelar'])){
+
+    header("location:../iniciaSesion.php");
+  }
 
  session_start();
+
  if(isset($_SESSION["autentificado"]) && ($_SESSION["autentificado"] == "OK")){
    header('Location:menuPrincipal.php');
  }
  include ("../funciones.php");
+
  if(isset ($_REQUEST['cambiarPwd']) && !empty ($_REQUEST['password'])){
     $dni = $_REQUEST['dni'];
     $pwd = $_REQUEST['password'];
@@ -31,7 +37,7 @@
    
    
 }else{
-    header("location:cambiaPassword.php");
+    header("location:../cambiaPassword.php");
 }
 
 ?>                   

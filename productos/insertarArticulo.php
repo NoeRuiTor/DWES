@@ -46,7 +46,7 @@
      //Comprobar que existe precio y que es el formato correcto
     if(isset($_REQUEST['precio'])){
         $precio = $_REQUEST['precio'];
-        $precio = number_format($precio);
+       
     }else{
         $precioCorrecto = false;
     }

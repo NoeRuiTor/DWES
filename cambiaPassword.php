@@ -81,14 +81,10 @@ include("cabecera.php");
                     echo "<h3>NO EXISTEN CLIENTES CON ESE DNI</h3>"; 
                     echo "</div>";                   
                 }
-          }
-           
+          }        
           
           
-          if(isset ($_POST['btnCancelar'])){
-
-            header("location:iniciaSesion.php");
-          }
+          
           ?>          
   </section>
  </main>

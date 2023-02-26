@@ -20,15 +20,16 @@
     }
 
         
-        
-    if(isset($_REQUEST['error'])){
-      echo "<div id='error'><h2>{$_REQUEST['error']}</h2></div>";
-    }
-        if($rol == 'administrador' || $rol == 'empleado'){           
+     if($rol == 'administrador' || $rol == 'empleado'){                     
       
 
       ?>
         <main class="panelUsu">
+    <?php           
+    if(isset($_REQUEST['error'])){
+      echo "<div id='error'><h2>{$_REQUEST['error']}</h2></div>";
+    }
+    ?>  
          <div class="panelUsu__heading">
             <h1>Hola <?php if(isset($_SESSION['nombre'])){echo $_SESSION['nombre'];} ?></h1>
             <p>Mantenimiento de usuarios</p>            

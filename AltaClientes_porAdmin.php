@@ -14,6 +14,35 @@ include("cabecera.php");
 if(isset($_SESSION['rol']) && $_SESSION['rol'] == 'administrador'){ 
 ?>
   <main class="panelUsu">
+    <?php
+    if(isset($_GET['existenDatos']) || isset($_GET['existeRol']) || isset($_GET['repeUser']) || isset($_GET['existeApellidos'])
+    || isset ($_GET['existeDni']) || isset ($_GET['correctoDni']) || isset ($_GET['existeUsuario']) || isset ($_GET['estadoCorrecto'])){
+  
+        echo " <div class='errores'>";
+        if($_GET['existeUsuario']==false){
+            echo "<p>Error en el campo USUARIO. El email no tiene un formato correcto.</p>";        
+        }
+        if($_GET['existeDni']==false || ($_GET['correctoDni']== false)){
+            echo "<p>Error en el campo DNI, vuelva a introducirlo</p>";        
+        }
+        if($_GET['existenDatos']==false){
+            echo "<p>Compruebe que ha introducido todos los datos</p>";     
+        }
+  
+        if($_GET['repeUser']==true){
+        echo "<p>El correo introducido ya existe en la base de datos</p>";
+        } 
+  
+        if($_GET['existeRol']==false){
+        echo "<p>Debe indicar el rol del usuario</p>";
+      }
+        if($_GET['estadoCorrecto']==false){
+          echo "<p>Debe indicar el estado del usuario</p>";
+        }
+      echo "</div>";
+    
+  }
+  ?>
       <div class="panelUsu__heading">
             <h1>Hola <?php if(isset($_SESSION['nombre'])){echo $_SESSION['nombre'];} ?></h1>
             <p>Selecciona una opción:</p>            
@@ -90,33 +119,7 @@ if(isset($_SESSION['rol']) && $_SESSION['rol'] == 'administrador'){
 
 include_once("pie.php");
 
-  if(isset($_GET['existenDatos']) || isset($_GET['existeRol']) || isset($_GET['repeUser']) || isset($_GET['existeApellidos'])
-  || isset ($_GET['existeDni']) || isset ($_GET['correctoDni']) || isset ($_GET['existeUsuario']) || isset ($_GET['estadoCorrecto'])){
-
-      echo " <div class='errores'>";
-      if($_GET['existeUsuario']==false){
-          echo "<p>Error en el campo USUARIO. El email no tiene un formato correcto.</p>";        
-      }
-      if($_GET['existeDni']==false || ($_GET['correctoDni']== false)){
-          echo "<p>Error en el campo DNI, vuelva a introducirlo</p>";        
-      }
-      if($_GET['existenDatos']==false){
-          echo "<p>Compruebe que ha introducido todos los datos</p>";     
-      }
-
-      if($_GET['repeUser']==true){
-      echo "<p>El correo introducido ya existe en la base de datos</p>";
-      } 
-
-      if($_GET['existeRol']==false){
-      echo "<p>Debe indicar el rol del usuario</p>";
-    }
-      if($_GET['estadoCorrecto']==false){
-        echo "<p>Debe indicar el estado del usuario</p>";
-      }
-    echo "</div>";
   
-}
 
 } else{
   header("Location:menuPrincipal.php");
