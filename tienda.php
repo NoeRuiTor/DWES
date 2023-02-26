@@ -212,6 +212,7 @@ if(isset($_REQUEST['id_categoria'])){
                 $sentencia -> execute();
                 $articulo = $sentencia->setFetchMode(PDO::FETCH_CLASS,'articulo');
             }
+   
 }
 
 ?>
@@ -259,14 +260,19 @@ if(isset($_REQUEST['id_categoria'])){
                 echo "</div>";   
                 echo "<div class='paginas'>";
                     if ($total_paginas > 1){
-                       for ($i=1;$i<=$total_paginas;$i++){
-                        $idcat=$id_categoria;
+                       for ($i=1;$i<=$total_paginas;$i++){                        
                           if ($pagina == $i){
                           //si muestro el índice de la página actual, no coloco enlace
                           echo $pagina . " ";
                           }else{
                             //si el índice no corresponde con la página mostrada actualmente, coloco el enlace para ir a esa página
+                            if(isset($id_categoria)){                              
+                              $idcat=$id_categoria;                               
                             echo "<a href='tienda.php?id_categoria=".$idcat."&pagina=". $i ."'>" . $i . "</a> ";
+                            }else{
+                              echo "<a href='tienda.php?pagina=". $i ."'>" . $i . "</a> ";
+                            }
+                           
                           }
                        }
                       }
